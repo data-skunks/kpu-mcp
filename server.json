@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.keywordspeopleuse/keyword-research",
+  "title": "KeywordsPeopleUse",
+  "description": "Keyword research: Google People Also Ask, Autocomplete, Reddit/Quora questions, semantic keywords.",
+  "repository": {
+    "url": "https://github.com/data-skunks/kpu-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://keywordspeopleuse.com/mcp-server",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp-keywordspeopleuse.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Your KeywordsPeopleUse API key, from Settings > API access at keywordspeopleuse.com/settings",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    },
+    {
+      "type": "sse",
+      "url": "https://mcp-keywordspeopleuse.com/sse",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Your KeywordsPeopleUse API key, from Settings > API access at keywordspeopleuse.com/settings",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
